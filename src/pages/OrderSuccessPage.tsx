@@ -19,11 +19,9 @@ const OrderSuccessPage: React.FC = () => {
       <FaCheckCircle className="success-icon" />
       <h2>Payment Successful!</h2>
       <p>Thank you for your purchase. Your order #12148 has been placed.</p>
-    <a href="">
-      <Link to="/err"  className="continue-btn">
+      <Link to="/"  className="continue-btn">
         Continue Shopping
       </Link>
-      </a>
     </div>
   </div>
             );
