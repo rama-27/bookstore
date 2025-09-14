@@ -1,0 +1,1751 @@
+/* General styles for BookVerse */
+.BookVerse {
+  font-family: 'Poppins', sans-serif;
+  color: #2c3e50;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Reset margins for BookVerse and its children */
+.BookVerse, .BookVerse * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;/* General styles for BookVerse */
+.BookVerse {
+  font-family: 'Poppins', sans-serif;
+  color: #2c3e50;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Reset margins for BookVerse and its children */
+.BookVerse, .BookVerse * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Dark mode styles */
+.BookVerse.dark-mode {
+  background-color: #1a1a2e;
+  color: #eaeaea;
+}
+
+/* Header styles */
+.BookVerse-header {
+  background: #ffffff;
+  color: black;
+  padding: 1rem 2rem;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 100%; /* Allow header content to take full width */
+  /* Added flex-wrap for responsiveness if logo/search become too wide */
+  flex-wrap: wrap;
+  gap: 1rem; /* Add some gap if items wrap */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  /* Prevent logo from shrinking too much */
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  font-size: 2.5rem;
+  margin-right: 0.75rem;
+  color: #f1c40f;
+}
+
+/* Added style for h1 inside logo-container */
+.logo-container h1 {
+  font-size: 1.8rem; /* Adjust font size as needed */
+  flex-shrink: 0; /* Prevent title from shrinking too much */
+}
+
+
+.search-container {
+  background-color: white;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  /* Use margin-left: auto to push it to the right IF there's space */
+  /* Add flex-grow to allow it to take available space IF needed */
+  /* Add min-width to prevent it from collapsing completely */
+  margin-left: auto;
+  flex-grow: 1;
+  min-width: 150px; /* Adjust minimum width for the search bar */
+  max-width: 300px; /* Optional: limit max width of search bar */
+}
+
+.search-icon {
+  color: #6a11cb;
+  margin-right: 0.5rem; /* Add some space between icon and input */
+}
+
+.search-input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  outline: none; /* Remove default outline */
+  flex-grow: 1; /* Allow input to fill available space in search container */
+  width: 100%; /* Ensure input respects flex container width */
+}
+
+.theme-toggle {
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-left: 1rem;
+  flex-shrink: 0; /* Prevent toggle from shrinking */
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Hero section styles */
+.hero-section {
+  background: #e9c46a;
+  color: black;
+  text-align: center;
+  padding: 10rem 5rem 2rem 5rem;
+  font-size: large;
+  clip-path: none;
+  /* Adjust clip-path break point for smaller screens if needed */
+}
+@media (max-width: 768px) {
+    .hero-section {
+        clip-path: none; /* Remove clip-path on smaller screens for simpler rendering */
+        padding-bottom: 2rem; /* Adjust padding if shape is removed */
+    }
+     /* Adjust font size for smaller screens */
+    .hero-content .animated-text {
+        font-size: 2rem;
+    }
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
+
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.animated-text {
+  font-size: 4.5rem;
+  font-weight: bold;
+  /* Consider adjusting animation timing/delay for better feel */
+  animation: fadeIn 2s ease-in-out;
+}
+
+.cta-button {
+  background-color: #ff6f61;
+  color: white;
+  margin-top: 50px ;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #e74c3c;
+  transform: scale(1.05);
+}
+/* ... (previous styles like general BookVerse, header, hero, etc.) ... */
+
+/* Filters container styles */
+.filters-container {
+  display: flex; /* Keep display flex */
+  justify-content: center; /* Keep centering */
+  margin: 2rem 0; /* Keep vertical margin */
+  /* --- FIX for Overflow: Add wrapping --- */
+  flex-wrap: wrap;
+  /* --- FIX for Spacing: Add gap to the container --- */
+  /* This replaces the margin on the individual buttons */
+  gap: 0.75rem; /* Adjust value as needed for desired spacing */
+  /* Optional: Add some horizontal padding to prevent items from touching the screen edges */
+  padding: 0 1rem;
+}
+
+.filter-button {
+  background-color: #ffffff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  /* --- FIX for Spacing: REMOVE or comment out the margin --- */
+  /* margin: 0 0.5rem; */ /* <-- REMOVE THIS LINE */
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Optional: Prevent text inside button from wrapping */
+  white-space: nowrap;
+  /* Optional: Prevent buttons from shrinking too much when wrapping */
+  flex-shrink: 0;
+}
+
+.filter-button.active {
+  background-color: #ff8fab;
+  color: white;
+}
+
+.filter-button:hover {
+  background-color: #ffc2d1;
+  transform: scale(1.05);
+}
+
+/* --- END FILTERS CONTAINER STYLES FIX --- */
+
+/* Add padding to the main content area (already done in previous step) */
+main {
+  flex-grow: 1; /* Allow main to take up available vertical space */
+  padding: 0 20px; /* Add horizontal padding - adjust value as needed */
+  max-width: 1200px; /* Optional: Limit max width on large screens for better readability */
+  margin: 0 auto; /* Optional: Center the content block if max-width is set */
+}
+
+/* Styles for the BookList container (optional) */
+.BookList-container {
+    /* Add any BookList specific styles here if needed */
+}
+
+/* Styles for the BookItem grid (the flex container inside BookList) */
+.BookList-grid {
+    /* Keep gap: '16px' or move it here from inline styles */
+    display: flex; /* Ensure it's display: flex */
+    flex-wrap: wrap; /* Ensure it wraps */
+    justify-content: center; /* Center items */
+    gap: 6px 12px; /* Consistent gap between book items */
+        padding: 5px;
+}
+
+
+/* Pagination Controls styling (from BookList inline styles) */
+/* Pagination Controls styling (from BookList inline styles - now in CSS) */
+.pagination-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    /* Add gap between buttons and text */
+    gap: 10px; /* Adjust gap as needed */
+}
+
+.pagination-controls button {
+    /* Removed margin: 0 5px; as gap handles spacing */
+    border: 1px solid #f4f0f8;
+    border-radius: 4px;
+    background-color: #ff8fab;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+
+    /* --- Styles for Buttons with Icons --- */
+    display: flex; /* Use flexbox to center the icon */
+    align-items: center; /* Vertically center the icon */
+    justify-content: center; /* Horizontally center the icon */
+    padding: 0.6rem; /* Adjust padding to give the icon space - maybe make it square? */
+    /* If you want square buttons: */
+    width: 35px; /* Example fixed width */
+    height: 35px; /* Example fixed height */
+    /* --- End Styles for Icons --- */
+
+    /* Ensure the icon inside the button doesn't affect button size unexpectedly */
+    line-height: 1; /* Helps with vertical centering */
+}
+
+.pagination-controls button:disabled {
+    opacity: 0;
+    cursor: not-allowed;
+}
+
+.pagination-controls button:not(:disabled):hover {
+    background-color: #ffb3c6;
+    color: white;
+}
+
+.pagination-status { /* Style for the page status text */
+    margin: 0 15px; /* Keep margin around the text */
+    font-size: 0.9em;
+    color: #555; /* Match text color */
+    /* Add white-space: nowrap if you don't want the status text to wrap */
+    white-space: nowrap;
+}
+
+/* Style for the icon element itself within the button */
+.pagination-controls button svg {
+    font-size: 1.2em; /* Adjust icon size relative to button font size */
+}
+
+
+/* Dark mode pagination colors */
+.BookVerse.dark-mode .pagination-controls button {
+    border-color: #2575fc;
+    background-color: #333;
+    color: #2575fc;
+}
+.BookVerse.dark-mode .pagination-controls button:not(:disabled):hover {
+    background-color: #2575fc;
+    color: white;
+}
+.BookVerse.dark-mode .pagination-controls span { /* Also apply dark mode to the status span */
+    color: #bbb;
+}
+
+
+/* Footer styles */
+footer {
+  background: #e9c46a ;
+  color: #1b263b;
+  padding: 2rem;
+  text-align: center;
+  margin-top: auto; /* Pushes footer to the bottom */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap; /* Allow footer sections to wrap */
+  gap: 1rem; /* Add gap between footer sections */
+  padding-bottom: 1rem; /* Space above copyright */
+}
+
+.footer-section {
+  margin: 0.5rem; /* Keep a little margin, but gap handles main spacing */
+  flex: 1; /* Allow sections to grow */
+  min-width: 150px; /* Ensure sections don't get too narrow */
+}
+
+.footer-section h3 {
+    margin-bottom: 0.75rem;
+    color: #1b263b; /* Highlight section titles */
+}
+
+.footer-section p,
+.footer-section a {
+    color: #1b263b; /* Lighter color for text and links */
+    text-decoration: none; /* Remove underline from links */
+    display: block; /* Make links block for better click area */
+    margin-bottom: 0.5rem; /* Space out links/text */
+    transition: color 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #415a77; /* Highlight links on hover */
+    text-decoration: underline;
+}
+
+
+.social-icons a {
+  color: #1b263b;
+  margin: 0 0.75rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+  /* Remove display: block that was added above if you want them inline */
+  display: inline-block; /* Keep social icons inline */
+}
+
+.social-icons a:hover {
+  color: #415a77;
+}
+
+.copyright {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #1b263b;
+}
+
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add some basic responsiveness for smaller screens */
+@media (max-width: 768px) {
+
+.book-item-card:hover {
+    transform: translateY(-5px); /* Lift slightly */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Stronger shadow */
+}
+  .BookVerse-header {
+    padding: 1rem; /* Reduce header padding */
+  }
+
+  .header-content {
+    flex-direction: column; /* Stack header items vertically on small screens */
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .search-container {
+      margin-left: 0; /* Remove auto-margin when stacked */
+      width: 100%; /* Make search bar take full width */
+      max-width: none; /* Remove max width constraint */
+      padding: 0.4rem 0.8rem; /* Adjust padding */
+  }
+
+  .search-input {
+      padding: 0.4rem; /* Adjust input padding */
+  }
+
+  .logo-container {
+      width: 100%; /* Allow logo container to take full width */
+      justify-content: center; /* Center logo and title */
+  }
+   .theme-toggle {
+       position: absolute; /* Position toggle absolutely */
+       top: 1rem;
+       right: 1rem;
+       margin-left: 0;
+       font-size: 1.5rem;
+   }
+
+  .hero-section {
+    padding: 3rem 1rem; /* Reduce hero padding */
+  }
+
+  .animated-text {
+    font-size: 2.5rem; /* Adjust hero text size */
+  }
+
+  .filter-button {
+      padding: 0.6rem 1.2rem; /* Slightly smaller filter buttons */
+      font-size: 0.9rem;
+  }
+
+  main {
+    padding: 0 10px; /* Reduce main horizontal padding */
+  }
+
+  .pagination-controls {
+      margin: 15px 0; /* Adjust pagination margin */
+  }
+
+   .pagination-controls button {
+       padding: 0.4rem 0.8rem; /* Smaller pagination buttons */
+       font-size: 0.8em;
+   }
+
+  .pagination-controls span {
+      margin: 0 10px; /* Adjust space around pagination text */
+      font-size: 0.8em;
+  }
+
+
+  footer {
+    padding: 1.5rem; /* Reduce footer padding */
+  }
+
+  .footer-content {
+      flex-direction: column; /* Stack footer sections */
+      gap: 1.5rem;
+  }
+
+   .footer-section {
+       margin: 0; /* Remove individual section margin if stacked */
+       min-width: auto; /* Remove min-width constraint */
+   }
+}
+
+/* Add some more specific breakpoints if needed */
+@media (max-width: 480px) {
+    .animated-text {
+        font-size: 2rem;
+    }
+     .cta-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 1rem;
+     }
+}
+}
+
+/* Dark mode styles */
+.BookVerse.dark-mode {
+  background-color: #1a1a2e;
+  color: #eaeaea;
+}
+
+/* Header styles */
+.BookVerse-header {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  font-size: 2.5rem;
+  margin-right: 0.75rem;
+  color: #f1c40f;
+}
+
+.search-container {
+  background-color: white;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.search-icon {
+  color: #6a11cb;
+}
+
+.search-input {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 4px;
+}
+
+.theme-toggle {
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+/* Hero section styles */
+.hero-section {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: white;
+  text-align: center;
+  clip-path: none;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.animated-text {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.cta-button {
+  background-color: #ff6f61;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #e74c3c;
+  transform: scale(1.05);
+}
+
+/* Filters container styles */
+.filters-container {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.filter-button {
+  background-color: #dfe6e9;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin: 0 0.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.filter-button.active {
+  background-color: #6a11cb;
+  color: white;
+}
+
+.filter-button:hover {
+  background-color: #2575fc;
+  transform: scale(1.05);
+}
+
+/* Footer styles */
+footer {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  margin-top: auto;
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  margin: 0.5rem;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 0.75rem;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #f1c40f;
+}/* In src/BookVerse.css */
+
+/* ... (previous styles) ... */
+
+/* Add a hover effect for the book item cards */
+.book-item-card {
+    /* Inherits styles from inline 'cardStyle' */
+    /* Add transitions inline or here */
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.book-item-card:hover {
+    transform: translateY(-5px); /* Lift slightly */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Stronger shadow */
+}
+
+/* In src/BookVerse.css */
+
+/* --- Ensure body and root take full height for centering --- */
+/* Add this at the very top if not already in index.css */
+html, body, #root {
+  height: 100%; /* Make sure root elements take full height */
+  margin: 0;
+  padding: 0;
+  overflow-y: auto; /* Add scroll if content overflows vertically */
+}
+
+.BookVerse {
+  /* Keep display: flex, flex-direction: column, min-height: 100vh */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* ... other styles ... */
+}
+
+/* Header styles */
+/* ... (Keep header styles as is) ... */
+
+/* Hero section styles */
+/* ... (Keep hero styles as is) ... */
+
+/* Filters container styles */
+/* ... (Keep filters styles as is) ... */
+
+/* Add padding and centering to the main content area */
+main {
+  flex-grow: 1; /* Allow main to take up available vertical space */
+  padding: 20px; /* Add padding on all sides */
+  max-width: 1200px; /* Optional: Limit max width on large screens */
+  margin: 0 auto; /* Center main block horizontally */
+
+  /* Make main a flex container to help center its children (BookList or BookDetail page) */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center children horizontally within main */
+  justify-content: flex-start; /* Align children to the start vertically (default) */
+                         /* We will rely on margin: auto on the child for vertical centering */
+  min-height: 0; /* Important for flex child to prevent infinite height */
+}
+
+/* --- Book Detail Page Styles --- */
+/* The main container for the book detail page */
+.book-detail-page {
+  padding: 40px; /* Uniform padding */
+  max-width: 900px; /* Container width */
+  /* Use auto margins for both vertical and horizontal centering within the flex parent (main) */
+  /* This centers the block in the available space provided by main */
+  margin: auto;
+  width: 100%; /* Ensure it takes full width up to max-width */
+
+  /* Use some color instead of plain white */
+  background-color: #f8f8f8; /* Example: A subtle light gray */
+  /* Or a very light tint of the theme color */
+  /* background-color: #eef2ff; /* Very light blue tint */
+
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+  border-radius: 10px; /* More rounded corners */
+
+  /* Make this a flex container to manage layout of its direct children (content, description, button) */
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center its children horizontally */
+
+  /* Ensure it doesn't shrink and wraps its content */
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+/* Dark mode for the detail page */
+.BookVerse.dark-mode .book-detail-page {
+    background-color: #2a2a3e; /* Dark background */
+    color: #eaeaea; /* Light default text color */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Darker shadow */
+}
+
+
+/* Container for the main content layout (image + info) - SIDE-BY-SIDE on wider screens */
+.detail-content {
+    display: flex; /* Enable flexbox */
+    gap: 40px; /* Space between image and info */
+    align-items: flex-start; /* Align items to the top */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center; /* Center items horizontally when they wrap */
+    width: 100%; /* Ensure it takes full width of parent */
+    margin-bottom: 30px; /* Space below the content block */
+}
+
+/* Image container - controls space and centering for the image */
+.detail-image-container {
+    flex-shrink: 0; /* Prevent image container from shrinking */
+    /* Use flex-basis to suggest its size in the flex flow */
+    flex-basis: 280px; /* Suggested width - adjust for ~10% bigger */
+    max-width: 100%; /* Ensure it doesn't exceed parent width */
+
+    display: flex; /* Use flex to center the image itself */
+    justify-content: center; /* Center image horizontally */
+    align-items: flex-start; /* Align image to top in its container */
+
+    /* Removed margin-bottom here, gap handles spacing when stacked */
+}
+
+/* The image element itself */
+.detail-image {
+    max-width: 100%; /* Ensure image fits within its container */
+    height: auto; /* Maintain aspect ratio */
+    /* max-height: 380px; /* Optional: Limit max height if needed */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Add shadow to image */
+    border-radius: 5px; /* Slightly rounded image corners */
+    object-fit: contain; /* Ensure image fits within bounds without distortion */
+    background-color: #f0f0f0; /* Placeholder bg for image */
+    display: block; /* Prevent extra space below the image */
+}
+
+/* Dark mode for detail image container/image */
+.BookVerse.dark-mode .detail-image-container {
+    background-color: #3a3a5e; /* Darker bg for container around image */
+    border-radius: 5px; /* Match image border-radius */
+}
+.BookVerse.dark-mode .detail-image {
+     background-color: #444; /* Darker placeholder bg for image */
+}
+
+
+/* Info container (title, author, metadata, price) - takes up remaining space */
+.detail-info {
+    flex-grow: 1; /* Allow info section to take up remaining space */
+    flex-shrink: 1; /* Allow info section to shrink */
+    min-width: 300px; /* Prevent info section from becoming too narrow - adjust as needed */
+    text-align: left; /* Align text to the left for better readability on wide screens */
+    max-width: 100%; /* Ensure it doesn't overflow parent */
+}
+
+.detail-title {
+    font-size: 2.4em; /* Larger title */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #34495e; /* Darker color for title */
+    line-height: 1.2;
+}
+
+/* Dark mode title color */
+.BookVerse.dark-mode .detail-title {
+    color: #ecf0f1; /* Lighter color for title */
+}
+
+
+.detail-author {
+    font-size: 1.3em; /* Slightly larger author */
+    color: #7f8c8d; /* Subtler color for author */
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+/* Dark mode author color */
+.BookVerse.dark-mode .detail-author {
+    color: #bdc3c7;
+}
+
+
+/* Metadata section (ISBN, Genre, Publisher) */
+.detail-metadata {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee; /* Add a separator line */
+    margin-bottom: 20px; /* Space below metadata before price/description */
+    width: 100%; /* Ensure metadata block takes full width */
+}
+/* Dark mode metadata separator */
+.BookVerse.dark-mode .detail-metadata {
+    border-top-color: #555;
+}
+
+
+.detail-metadata p {
+    font-size: 1em;
+    margin-bottom: 0.7rem; /* Space out metadata lines */
+    line-height: 1.4;
+    display: flex; /* Use flexbox for key-value alignment */
+    align-items: baseline; /* Align text baselines */
+    flex-wrap: wrap; /* Allow long values to wrap */
+    /* Remove text-align from here */
+}
+
+.detail-metadata p:last-child {
+     margin-bottom: 0; /* No bottom margin on the last metadata item */
+}
+
+.detail-metadata p strong {
+    /* Style for labels like ISBN, Genre, Publisher */
+    flex-shrink: 0; /* Prevent label from shrinking */
+    flex-basis: 100px; /* Suggested width for labels for better alignment */
+    margin-right: 10px; /* Space between label and value */
+    font-weight: bold;
+    color: #555; /* Darker color for labels */
+    white-space: nowrap; /* Prevent label text from wrapping */
+}
+/* Dark mode metadata label color */
+.BookVerse.dark-mode .detail-metadata p strong {
+     color: #bbb;
+}
+
+
+/* Price - Separate style for distinct look */
+.detail-price {
+    font-size: 1.6em; /* Larger price */
+    font-weight: bold;
+    color: #27ae60; /* Green for price */
+    margin-top: 0; /* Adjusted spacing, metadata has bottom margin */
+    margin-bottom: 20px; /* Space below price before description/button */
+    width: 100%; /* Ensure price block takes full width */
+     text-align: left; /* Align price to the left */
+}
+/* Dark mode price color */
+.BookVerse.dark-mode .detail-price {
+    color: #2ecc71; /* Brighter green for price */
+}
+
+
+/* --- Description Section Styles --- */
+.detail-description {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee; /* Add separator above description */
+    text-align: left; /* Align description text left for readability */
+    width: 100%; /* Ensure description block takes full width */
+    margin-bottom: 30px; /* Space below description before button */
+}
+/* Dark mode description separator */
+.BookVerse.dark-mode .detail-description {
+     border-top-color: #555;
+}
+
+.detail-description h3 {
+    font-size: 1.4em; /* Slightly larger heading */
+    margin-bottom: 1rem;
+    color: #34495e; /* Match title color */
+}
+/* Dark mode description heading color */
+.BookVerse.dark-mode .detail-description h3 {
+    color: #ecf0f1;
+}
+
+.detail-description p {
+    font-size: 1em;
+    line-height: 1.6; /* Improve readability with more line height */
+    color: #555; /* Body text color */
+}
+/* Dark mode description text color */
+.BookVerse.dark-mode .detail-description p {
+    color: #ccc;
+}
+/* --- End Description Section Styles --- */
+
+
+/* Back button style */
+.back-button {
+  /* margin-top: 30px; */ /* Remove margin-top as detail-description has bottom-margin */
+  padding: 0.75rem 2rem;
+  background-color: #3498db; /* Blue color */
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: scale(1.05);
+}
+
+/* Dark mode back button */
+.BookVerse.dark-mode .back-button {
+     background-color: #8e44ad; /* Purple color in dark mode */
+}
+.BookVerse.dark-mode .back-button:hover {
+    background-color: #9b59b6; /* Lighter purple on hover */
+}
+
+
+/* --- Responsiveness for Book Detail Page --- */
+@media (max-width: 768px) {
+    .book-detail-page {
+        padding: 20px 15px; /* Reduce padding on smaller screens */
+        margin: 15px auto; /* Adjust margin */
+    }
+
+    .detail-content {
+        flex-direction: column; /* Stack image and info vertically */
+        gap: 20px; /* Adjust gap when stacked */
+        align-items: center; /* Center items when stacked */
+    }
+
+    .detail-image-container {
+         flex-basis: auto; /* Remove flex-basis constraint when stacked */
+         width: 60%; /* Make image container take 60% width of parent */
+         max-width: 200px; /* But don't let it get too wide */
+         margin-bottom: 0; /* Gap handles spacing now */
+    }
+     .detail-image {
+         max-width: 100%; /* Ensure image fits within the reduced container width */
+     }
+
+    .detail-info {
+        flex-grow: 0; /* No need to grow when stacked */
+        min-width: auto; /* Remove min-width constraint */
+        width: 100%; /* Allow info section to take full width */
+        text-align: center; /* Center text when stacked */
+    }
+
+    .detail-title {
+        font-size: 1.8em; /* Adjust title font size */
+         margin-bottom: 0.3rem;
+    }
+    .detail-author {
+        font-size: 1.1em; /* Adjust author font size */
+        margin-bottom: 1rem;
+    }
+
+    .detail-metadata {
+        margin-top: 15px;
+        padding-top: 15px;
+        margin-bottom: 15px; /* Adjust margin */
+        /* Remove width: 100%; - already 100% inside detail-info */
+    }
+     .detail-metadata p {
+         text-align: center; /* Center metadata lines */
+         flex-direction: column; /* Stack key and value */
+         align-items: center; /* Center stacked items */
+         margin-bottom: 10px; /* Space out stacked metadata items */
+     }
+
+    .detail-metadata p strong {
+         display: block; /* Make key a block */
+         min-width: auto; /* Remove min-width constraint */
+         flex-basis: auto; /* Remove flex-basis constraint */
+         margin-right: 0; /* Remove right margin */
+         margin-bottom: 5px; /* Space between key and value */
+         white-space: normal; /* Allow key text to wrap if needed */
+    }
+
+    .detail-price {
+        font-size: 1.3em; /* Adjust price size */
+        margin-top: 0; /* Adjusted spacing */
+        margin-bottom: 20px; /* Keep space before description/button */
+         text-align: center; /* Center price when stacked */
+    }
+
+    .detail-description {
+        margin-top: 15px;
+        padding-top: 15px;
+        text-align: center; /* Center description text on small screens */
+        /* Remove width: 100%; - already 100% inside detail-page */
+        margin-bottom: 20px; /* Adjust bottom margin */
+    }
+    .detail-description h3 {
+        font-size: 1.2em;
+        margin-bottom: 0.8rem;
+    }
+     .detail-description p {
+        font-size: 0.95em;
+     }
+
+
+    .back-button {
+        margin-top: 0; /* Remove top margin, description bottom margin handles space */
+        padding: 0.6rem 1.5rem; /* Smaller button */
+        font-size: 0.9rem;
+    }
+}
+
+/* Add some more specific breakpoints if needed */
+@media (max-width: 480px) {
+    .detail-title {
+        font-size: 1.5em;
+    }
+    .detail-author {
+        font-size: 1em;
+    }
+     .detail-price {
+         font-size: 1.2em;
+     }
+     .detail-description h3 {
+        font-size: 1.1em;
+     }
+}
+
+/* --- End Book Detail Page Styles --- */
+
+/* src/BookVerse.css */
+
+/* ... (keep all your existing styles) ... */
+
+/* --- Additions for Cart --- */
+
+/* Header Cart Icon */
+.cart-icon-container {
+    position: relative; /* Needed for absolute positioning of counter */
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 1rem; /* Space from search bar or other header items */
+    color: rgb(121, 153, 155); /* Icon color */
+    transition: transform 0.2s ease;
+}
+
+.cart-icon-container:hover {
+    transform: scale(1.1);
+}
+
+.cart-icon {
+    font-size: 1.8rem; /* Size of the shopping cart icon */
+}
+
+.cart-counter {
+    position: absolute;
+    top: -8px; /* Adjust position */
+    right: -8px; /* Adjust position */
+    background-color: #ff6f61; /* Highlight color */
+    color: white;
+    border-radius: 50%;
+    padding: 0.2em 0.5em;
+    font-size: 0.7em;
+    font-weight: bold;
+    min-width: 1.8em; /* Ensure it's round even with single digit */
+    text-align: center;
+    line-height: 1.4; /* Adjust line height to vertically center text */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    pointer-events: none; /* Don't block clicks on the icon container */
+}
+
+/* Add to Cart Button on Detail Page */
+.add-to-cart-button {
+    display: inline-block; /* Or block if you want it on its own line */
+    margin-top: 20px; /* Space above button */
+    padding: 0.8rem 2.5rem; /* Generous padding */
+    background-color: #28a745; /* Green color */
+    color: white;
+    border: none;
+    border-radius: 25px; /* Pill shape */
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+.add-to-cart-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Dark mode for Add to Cart button */
+.BookVerse.dark-mode .add-to-cart-button {
+    background-color: #2ecc71; /* Brighter green */
+}
+.BookVerse.dark-mode .add-to-cart-button:hover {
+    background-color: #27ae60;
+}
+
+
+/* Cart Page Styles */
+.cart-page {
+    padding: 20px;
+    max-width: 800px; /* Limit width */
+    margin: 20px auto; /* Center page */
+    background-color: #fff; /* White background */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: #333; /* Default text color */
+}
+
+/* Dark mode for Cart Page */
+.BookVerse.dark-mode .cart-page {
+    background-color: #2a2a3e; /* Dark background */
+    color: #eaeaea; /* Light text */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+
+.cart-page-title {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    color: #34495e; /* Heading color */
+}
+/* Dark mode heading */
+.BookVerse.dark-mode .cart-page-title {
+     color: #ecf0f1;
+}
+
+
+.empty-cart-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #777;
+    margin-bottom: 20px;
+}
+/* Dark mode empty message */
+.BookVerse.dark-mode .empty-cart-message {
+    color: #bbb;
+}
+
+
+.cart-content {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+.cart-items-list {
+    flex-grow: 1; /* Allow list to take available space */
+    flex-basis: 60%; /* Suggest initial width */
+    min-width: 300px; /* Ensure list doesn't get too narrow */
+}
+
+.cart-summary {
+    flex-basis: 30%; /* Suggest initial width */
+    min-width: 200px; /* Ensure summary doesn't get too narrow */
+    background-color: #f9f9f9; /* Light background for summary */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    /* Ensure it doesn't shrink too much */
+    flex-shrink: 0;
+    text-align: left; /* Align summary text left */
+}
+
+/* Dark mode summary */
+.BookVerse.dark-mode .cart-summary {
+    background-color: #3b3b5a;
+    border-color: #555;
+}
+.BookVerse.dark-mode .cart-summary h3 {
+     color: #ecf0f1; /* Dark mode summary heading */
+}
+.BookVerse.dark-mode .cart-summary p {
+    color: #ccc; /* Dark mode summary text */
+}
+
+
+.cart-summary h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #34495e;
+}
+
+.cart-summary p {
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.cart-total {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #27ae60; /* Green for total */
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+/* Dark mode cart total */
+.BookVerse.dark-mode .cart-total {
+    color: #2ecc71;
+    border-top-color: #555;
+}
+
+
+/* Cart Item Styles */
+.cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee; /* Separator between items */
+    padding: 15px 0;
+    margin-bottom: 15px; /* Space between items */
+    /* Ensure wrapping for smaller screens */
+    flex-wrap: wrap;
+    gap: 15px; /* Gap between components of the item */
+    text-align: left; /* Ensure item details are left-aligned */
+}
+
+/* Dark mode item separator */
+.BookVerse.dark-mode .cart-item {
+    border-bottom-color: #555;
+}
+
+
+.cart-item:last-child {
+    border-bottom: none; /* No border after last item */
+    margin-bottom: 0;
+}
+
+.cart-item-image {
+    width: 80px; /* Fixed width for image */
+    height: 100px; /* Fixed height */
+    object-fit: contain;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+/* Dark mode item image */
+.BookVerse.dark-mode .cart-item-image {
+    background-color: #444;
+    border-color: #666;
+}
+
+
+.cart-item-details {
+    flex-grow: 1; /* Allow details to take space */
+    /* Removed flex-basis/min-width to allow it to take remaining space dynamically */
+}
+
+.cart-item-title {
+    font-size: 1.1em;
+    margin: 0 0 5px 0;
+    font-weight: bold;
+    color: #333;
+}
+/* Dark mode item title */
+.BookVerse.dark-mode .cart-item-title {
+     color: #ecf0f1;
+}
+
+
+.cart-item-author {
+    font-size: 0.9em;
+    color: #777;
+    margin: 0 0 5px 0;
+}
+/* Dark mode item author */
+.BookVerse.dark-mode .cart-item-author {
+     color: #bbb;
+}
+
+
+.cart-item-price {
+    font-size: 1em;
+    font-weight: bold;
+    color: #27ae60;
+    margin: 0;
+}
+/* Dark mode item price */
+.BookVerse.dark-mode .cart-item-price {
+    color: #2ecc71;
+}
+
+.cart-item-subtotal {
+    font-size: 1em;
+    font-weight: bold;
+    color: #34495e; /* Similar to heading color */
+    margin-left: auto; /* Push subtotal to the right */
+    flex-shrink: 0; /* Don't shrink subtotal */
+    min-width: 100px; /* Ensure enough space for subtotal */
+    text-align: right; /* Align subtotal text right */
+}
+/* Dark mode item subtotal */
+.BookVerse.dark-mode .cart-item-subtotal {
+    color: #ecf0f1;
+}
+
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between quantity controls and remove button */
+    flex-wrap: wrap; /* Allow controls to wrap if needed */
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow: hidden; /* To contain the buttons */
+    flex-shrink: 0; /* Prevent quantity controls from shrinking */
+}
+/* Dark mode quantity border */
+.BookVerse.dark-mode .cart-item-quantity {
+     border-color: #555;
+}
+
+
+.cart-item-quantity button {
+    background-color: #f0f0f0; /* Light background for buttons */
+    border: none;
+    padding: 8px; /* Adjust padding */
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease;
+    display: flex; /* Center icon */
+    align-items: center; /* Center icon vertically */
+    justify-content: center; /* Center icon horizontally */
+}
+/* Dark mode quantity buttons */
+.BookVerse.dark-mode .cart-item-quantity button {
+    background-color: #4b4b6b;
+    color: #eaeaea;
+}
+
+
+.cart-item-quantity button:hover {
+    background-color: #e0e0e0; /* Slightly darker on hover */
+}
+/* Dark mode quantity button hover */
+.BookVerse.dark-mode .cart-item-quantity button:hover {
+    background-color: #5b5b8b;
+}
+
+
+.cart-item-quantity span {
+    padding: 0 12px; /* Space around quantity number */
+    font-weight: bold;
+    min-width: 30px; /* Ensure consistent width */
+    text-align: center;
+}
+
+
+.cart-item-remove {
+    background-color: #e74c3c; /* Red for remove */
+    color: white;
+    border: none;
+    padding: 8px; /* Match quantity buttons */
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex; /* Center icon */
+    align-items: center; /* Center icon */
+    justify-content: center; /* Center icon */
+    transition: background-color 0.2s ease;
+    flex-shrink: 0; /* Prevent remove button from shrinking */
+}
+
+.cart-item-remove:hover {
+    background-color: #c0392b; /* Darker red */
+}
+
+/* Dark mode remove button */
+.BookVerse.dark-mode .cart-item-remove {
+     background-color: #e74c3c; /* Keep red, it's universal */
+}
+.BookVerse.dark-mode .cart-item-remove:hover {
+     background-color: #c0392b;
+}
+
+
+/* Action Buttons (Checkout, Continue Shopping, Clear) */
+.cart-summary button,
+.continue-shopping-button,
+.clear-cart-button {
+    display: block; /* Stack buttons */
+    width: 100%; /* Full width */
+    margin-top: 15px; /* Space between buttons */
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    text-align: center; /* Center text in buttons */
+}
+
+.checkout-button {
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+}
+.checkout-button:hover {
+    background-color: #218838;
+}
+/* Dark mode checkout */
+.BookVerse.dark-mode .checkout-button {
+    background-color: #2ecc71;
+}
+.BookVerse.dark-mode .checkout-button:hover {
+    background-color: #27ae60;
+}
+
+
+.continue-shopping-button {
+    background-color: #3498db; /* Blue */
+    color: white;
+    border: none;
+     /* Use inline-block if within empty message, block if below summary */
+     display: inline-block;
+     margin-top: 0; /* Adjust margin if inline */
+     padding: 8px 15px; /* Adjust padding if inline */
+     width: auto; /* Adjust width if inline */
+}
+.empty-cart-message .continue-shopping-button {
+    margin-left: 10px; /* Space from empty message text */
+}
+
+.cart-summary .continue-shopping-button {
+     display: block;
+     margin-top: 15px;
+     width: 100%;
+     padding: 10px;
+}
+
+
+.continue-shopping-button:hover {
+    background-color: #2980b9;
+}
+/* Dark mode continue shopping */
+.BookVerse.dark-mode .continue-shopping-button {
+     background-color: #8e44ad; /* Purple */
+}
+.BookVerse.dark-mode .continue-shopping-button:hover {
+     background-color: #9b59b6;
+}
+
+
+.clear-cart-button {
+    background-color: #e74c3c; /* Red */
+    color: white;
+    border: none;
+    opacity: 0.8; /* Slightly less prominent */
+}
+.clear-cart-button:hover {
+    background-color: #c0392b;
+    opacity: 1;
+}
+/* Dark mode clear cart */
+.BookVerse.dark-mode .clear-cart-button {
+     background-color: #e74c3c; /* Keep red */
+}
+.BookVerse.dark-mode .clear-cart-button:hover {
+     background-color: #c0392b;
+}
+
+
+/* --- Responsiveness for Cart Page --- */
+@media (max-width: 768px) {
+    .cart-page {
+        padding: 15px; /* Reduce padding */
+        margin: 15px auto; /* Adjust margin */
+    }
+
+    .cart-content {
+        flex-direction: column; /* Stack list and summary vertically */
+        gap: 20px;
+    }
+
+    .cart-items-list,
+    .cart-summary {
+        flex-basis: auto; /* Remove basis constraint when stacked */
+        min-width: auto; /* Remove min-width constraint */
+        width: 100%; /* Take full width */
+    }
+
+    .cart-item {
+        flex-direction: row; /* Keep item components in a row if space allows */
+        align-items: center;
+        flex-wrap: wrap; /* Allow components to wrap */
+        gap: 10px; /* Reduce gap */
+        justify-content: space-between; /* Distribute items */
+    }
+
+     /* Adjust flex behavior for item details and controls on small screens */
+     .cart-item-details {
+         flex-basis: 150px; /* Give details more space */
+         flex-grow: 1;
+     }
+     .cart-item-controls {
+         flex-basis: 120px; /* Give controls fixed space */
+         flex-grow: 0;
+         justify-content: flex-end; /* Push controls to the right */
+         gap: 10px; /* Smaller gap in controls */
+         flex-wrap: nowrap; /* Prevent controls themselves from wrapping */
+     }
+     .cart-item-quantity {
+         flex-shrink: 0;
+     }
+
+    .cart-item-subtotal {
+         width: 100%; /* Make subtotal take full width below item */
+         text-align: right;
+         margin-left: 0;
+         margin-top: 10px; /* Add space above subtotal */
+         border-top: 1px solid #eee; /* Add separator above subtotal */
+         padding-top: 10px;
+    }
+    /* Dark mode subtotal separator */
+    .BookVerse.dark-mode .cart-item-subtotal {
+         border-top-color: #555;
+    }
+
+    .cart-item-image {
+        width: 60px; /* Smaller image */
+        height: 80px;
+    }
+
+    .cart-item-title {
+        font-size: 1em; /* Smaller font */
+    }
+    .cart-item-author {
+        font-size: 0.85em;
+    }
+     .cart-item-price {
+        font-size: 0.9em;
+     }
+}
+
+@media (max-width: 480px) {
+     .cart-page-title {
+         font-size: 1.8em;
+     }
+
+     .cart-item {
+         flex-direction: column; /* Stack components completely if needed */
+         align-items: flex-start; /* Align stacked items to the left */
+     }
+      .cart-item-image {
+          width: 70px;
+          height: 90px;
+      }
+
+     .cart-item-details,
+     .cart-item-controls {
+          width: 100%; /* Take full width when stacked */
+          flex-basis: auto;
+          min-width: auto;
+          justify-content: flex-start; /* Align controls left when stacked */
+     }
+      .cart-item-subtotal {
+          text-align: left; /* Align subtotal left when stacked */
+          margin-top: 5px; /* Smaller margin when stacked */
+          padding-top: 5px;
+      }
+
+     .cart-summary {
+         text-align: center; /* Center summary text on very small screens */
+     }
+     .cart-summary button {
+         display: block; /* Ensure buttons remain blocks */
+         width: 100%;
+     }
+}
+
+/* Back button style (already exists, ensure it's also styled for dark mode if needed) */
+/* Added styles for back button in .BookVerse.css previously */
+/* Ensure it looks consistent on the CartPage */
+
+/* src/BookVerse.css */
+
+/* ... (keep all your existing styles, including previous cart additions) ... */
+
+/* --- Additions for Book Detail Page Cart Info --- */
+
+/* Container for the Add to Cart button and quantity */
+.add-to-cart-controls {
+    display: flex; /* Arrange items side-by-side */
+    align-items: center; /* Vertically center items */
+    gap: 15px; /* Space between the button and the quantity text */
+    margin-top: 20px; /* Keep spacing from the elements above it */
+    /* Optional: Adjust justification if needed */
+    /* justify-content: flex-start; /* Default is fine if detail-info is text-align: left */
+     /* If detail-info is text-align: center on mobile, might need to override */
+     /* Or make this container center itself on mobile if needed */
+}
+
+/* Style for the quantity text display */
+.book-detail-quantity-in-cart {
+    font-size: 1em; /* Adjust size */
+    color: #555; /* Match author or other secondary text color */
+    font-weight: bold; /* Make it stand out a bit */
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Dark mode quantity text */
+.BookVerse.dark-mode .book-detail-quantity-in-cart {
+    color: #bbb; /* Lighter color in dark mode */
+}
+
+/* --- Responsiveness for Book Detail Page Cart Info --- */
+@media (max-width: 768px) {
+    .add-to-cart-controls {
+        flex-direction: column; /* Stack button and quantity vertically */
+        gap: 10px; /* Adjust gap when stacked */
+        align-items: center; /* Center items when stacked */
+         width: 100%; /* Take full width to center block */
+         /* If detail-info is centered, this container will also be centered */
+    }
+
+    .add-to-cart-button {
+        width: auto; /* Allow button to size based on content + padding */
+        padding: 0.7rem 2rem; /* Adjust padding */
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .book-detail-quantity-in-cart {
+         font-size: 0.9em; /* Adjust font size */
+    }
+}
+
+
+/* --- End Additions for Book Detail Page Cart Info --- */
+
+
+/* Keep other existing styles */
+
+/* --- End Additions for Cart --- */
+
+/* src/BookVerse.css */
+
+/* ... (keep all your existing styles) ... */
+
+/* --- Additions for Book Detail Page Action Buttons --- */
+
+/* Container for action buttons (Back, View Cart) */
+.detail-actions {
+    display: flex; /* Arrange items side-by-side */
+    align-items: center; /* Vertically center items */
+    gap: 20px; /* Space between the buttons */
+    margin-top: 30px; /* Space above the button container */
+    justify-content: center; /* Center the buttons horizontally */
+    width: 100%; /* Allow the container to center */
+    /* Ensure it doesn't interfere with flex-direction: column of parent .book-detail-page */
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+/* Style for the View Cart button */
+.view-cart-button {
+  /* Borrow styles from existing buttons like checkout or continue shopping */
+  padding: 0.75rem 2rem;
+  background-color: #3498db; /* Blue color, similar to continue shopping */
+  color: white;
+  border: none;
+  border-radius: 25px; /* Pill shape */
+  cursor: pointer;
+  font-size: 1rem; /* Match back button size */
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center; /* Center text if needed */
+  display: inline-block; /* Ensure it behaves like a button */
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.view-cart-button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: scale(1.05);
+}
+
+/* Dark mode for View Cart button */
+.BookVerse.dark-mode .view-cart-button {
+     background-color: #8e44ad; /* Purple color in dark mode */
+}
+.BookVerse.dark-mode .view-cart-button:hover {
+    background-color: #9b59b6; /* Lighter purple on hover */
+}
+
+
+/* Adjust responsiveness for the detail actions container */
+@media (max-width: 768px) {
+    .detail-actions {
+        flex-direction: column; /* Stack buttons vertically on smaller screens */
+        gap: 15px; /* Adjust gap when stacked */
+        align-items: center; /* Center stacked buttons */
+        margin-top: 20px; /* Adjust top margin */
+    }
+
+     /* Ensure buttons take full width or size appropriately when stacked */
+     .view-cart-button,
+     .back-button {
+         width: auto; /* Allow buttons to size based on content + padding */
+         padding: 0.6rem 1.5rem; /* Adjust padding */
+         font-size: 0.9rem; /* Adjust font size */
+     }
+}
+
+/* --- End Additions for Book Detail Page Action Buttons --- */
+
+
+/* Keep other existing styles, including responsiveness adjustments for .book-detail-page */

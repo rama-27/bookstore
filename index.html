@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/bookstore.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Verse</title>
+<!-- ==== ADD THIS SCRIPT ==== -->
+    <script type="text/javascript">
+      // Check if a redirect path is stored in sessionStorage
+      var redirect = sessionStorage.getItem('redirectPath');
+      // If it is, clear it
+      if (redirect) {
+        sessionStorage.removeItem('redirectPath');
+        // And use the History API to update the URL to the stored path
+        // This makes react-router-dom see the correct path
+        window.history.replaceState(null, null, redirect);
+      }
+    </script>
+    <!-- ==== END OF SCRIPT ==== -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

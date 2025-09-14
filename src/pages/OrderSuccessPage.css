@@ -1,0 +1,93 @@
+/* Overall Page Container */
+.order-success-page {
+  max-width: 600px;
+  margin: 60px auto;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 48px 32px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: #232f3e;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Success Card */
+.success-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Success Icon */
+.success-icon {
+  font-size: 4em;
+  color: #2ecc71; /* Green for success */
+  margin-bottom: 8px;
+  animation: bounceIn 0.6s ease;
+}
+
+/* Heading */
+.success-card h2 {
+  font-size: 2em;
+  font-weight: 600;
+  color: #007185;
+  margin-bottom: 8px;
+}
+
+/* Paragraph */
+.success-card p {
+  font-size: 1.1em;
+  color: #565959;
+  margin-bottom: 24px;
+}
+
+/* Continue Button */
+.continue-btn {
+  display: inline-block;
+  background: linear-gradient(#ffd814, #ffa41c);
+  color: #0f1111;
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 32px;
+  font-size: 1.1em;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(15, 17, 17, 0.15);
+  transition: background 0.2s, transform 0.1s;
+}
+.continue-btn:hover {
+  background: linear-gradient(#ffa41c, #ffd814);
+  transform: scale(1.02);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounceIn {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .order-success-page {
+    padding: 32px 20px;
+    margin: 40px 20px;
+  }
+  .success-icon {
+    font-size: 3em;
+  }
+  .success-card h2 {
+    font-size: 1.8em;
+  }
+  .continue-btn {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
